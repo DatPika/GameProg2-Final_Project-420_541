@@ -41,9 +41,9 @@ public class CharacterMovement : MonoBehaviour
         {
             gameObject.transform.forward = move;
         }
-
+        // Left Shift
         isRunning = Input.GetButton("Run");
-
+        // Space
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             playerVelocity.y =  Mathf.Sqrt(jumpHeight * -3.0f * gravity);
@@ -69,8 +69,7 @@ public class CharacterMovement : MonoBehaviour
 
     public float GetMoveSpeed()
     {
-        // TODO: Check if removing 2nd condition breaks game loop
-        if (isRunning && (move != Vector3.zero))// Left shift
+        if (isRunning)// Left shift
         {
             return runSpeed;
         }

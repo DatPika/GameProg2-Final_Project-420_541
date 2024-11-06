@@ -16,5 +16,9 @@ public class CharacterAnimationManager : MonoBehaviour
     {
         animator.SetFloat("PlayerSpeed", movement.GetMoveSpeed());
         animator.SetBool("IsFalling", !movement.isGrounded);
+        if (Input.GetButtonDown("RunningSlide") && movement.isGrounded)
+        {
+            animator.SetTrigger("DoRunningSlide");
+        }
     }
 }
