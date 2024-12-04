@@ -6,10 +6,15 @@ public class CharacterMovement : MonoBehaviour
 {
     Vector3 playerVelocity;
     Vector3 move;
+    Transform cameraTransform;
 
-    public float walkSpeed = 5;
-    public float runSpeed = 8; 
-    public float jumpHeight = 1;
+    //Rotation variables
+    public float smoothTime = 0.05f;
+    private float velocity;
+
+    public float walkSpeed = 5.0f;
+    public float runSpeed = 8.0f; 
+    public float jumpHeight = 0.75f;
     public float gravity = -9.18f;
     public bool isGrounded;
     public bool isRunning;
@@ -20,6 +25,7 @@ public class CharacterMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        cameraTransform = Camera.main.transform;
     }
 
     public void Update()
@@ -33,13 +39,21 @@ public class CharacterMovement : MonoBehaviour
     }
   
     void ProcessMovement()
-    { 
-        // WASD
-        move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        // Turns the player towards the direction they're heading
+    {
+        // Get movement input relative to the camera
+        Vector3 cameraForward = new Vector3(cameraTransform.forward.x, 0, cameraTransform.forward.z).normalized;
+        Vector3 cameraRight = new Vector3(cameraTransform.right.x, 0, cameraTransform.right.z).normalized;
+
+        // WASD relative to the camera's direction
+        move = (cameraForward * Input.GetAxis("Vertical") + cameraRight * Input.GetAxis("Horizontal"));
+        
         if (move != Vector3.zero)
         {
-            gameObject.transform.forward = move;
+            // For smooth rotation
+            var targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg;
+            var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref velocity, smoothTime);
+            transform.rotation = Quaternion.Euler(0, angle, 0);
+            transform.forward = move;
         }
         // Left Shift
         isRunning = Input.GetButton("Run");
