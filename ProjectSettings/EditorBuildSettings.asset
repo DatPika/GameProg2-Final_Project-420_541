@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: b22d2fe1ba467fb48aa44f87a89f0d5d
+  - enabled: 1
     path: Assets/Scenes/Intro-Hike.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/SettingsMenu.unity
+    guid: 25bdf2ae3a1a7b9489306432804cc01c
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 7c29cd4490a41d64999b8f808ac0d3df
   m_configObjects: {}
