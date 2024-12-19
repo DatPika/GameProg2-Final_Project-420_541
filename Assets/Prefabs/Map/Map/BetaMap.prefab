@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2645876180313437973}
   m_Layer: 0
-  m_Name: Map
+  m_Name: BetaMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
