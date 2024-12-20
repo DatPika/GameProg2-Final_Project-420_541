@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // Singleton
+    public GameObject PauseMenu;
+    public UnityEvent GamePaused;
+    public UnityEvent GameResumed;
+    private bool isPaused;
 
     void Awake()
     {
@@ -33,11 +38,48 @@ public class GameManager : MonoBehaviour
 
     void ProcessInputs()
     {
-        if (Input.GetButton("Escape"))
+        if (Input.GetButtonDown("Escape"))
         {
-            Cursor.visible = true;
-            SceneManager.LoadScene("PauseMenu");
+            // To toggle the pause state
+            isPaused = !isPaused;
+            // Scale time accordingly
+            if (isPaused)
+            {
+                PauseMenu.SetActive(true);
+                Time.timeScale = 0f;
+                Cursor.visible = true;
+                GamePaused.Invoke(); // disables some player scripts and pauses audio
+            }
+            else
+            {
+                PauseMenu.SetActive(false);
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+                GameResumed.Invoke(); // enables those same player scripts and resumes audio
+            }
         }
+    }
+
+    // We want to have this function separate to call it when resume is clicked
+    public void Resume()
+    {
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        Cursor.visible = false;
+        GameResumed.Invoke(); // enables those same player scripts and resumes audio
+    }
+
+    // Also for pause menu UI for exit button
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void LoadMainMenu()
+    {
+        //Before loading the main menu again, we have to reset time
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void LoadNext()
