@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public UnityEvent GamePaused;
     public UnityEvent GameResumed;
     private bool isPaused;
+    // public GameObject MessagePanel;
+    // public GameObject Cube;
+    // private bool cubePickup = true;
 
     void Awake()
     {
@@ -86,4 +89,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    
 }

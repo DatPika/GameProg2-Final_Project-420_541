@@ -20,6 +20,10 @@ public class CharacterMovement : MonoBehaviour
     public bool isRunning;
     private CharacterController controller;
     private Animator animator;
+    
+    public GameObject MessagePanel;
+    // public GameObject Cube;
+    // private bool cubePickup = true;
 
     private void Start()
     {
@@ -94,6 +98,25 @@ public class CharacterMovement : MonoBehaviour
         else 
         {
             return 0f;
+        }
+    }
+
+    // Methods for showing/hiding MessagePanel
+    public void OpenMessagePanel(){
+        MessagePanel.SetActive(true);
+    }
+    public void CloseMessagePanel(){
+        MessagePanel.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other){
+        if(other.CompareTag("Cube")){
+            OpenMessagePanel();
+        }
+    }
+    private void OnTriggerExit(Collider other){
+        if(other.CompareTag("Cube")){
+            CloseMessagePanel();
         }
     }
 }
