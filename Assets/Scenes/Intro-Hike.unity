@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 231860168}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Cube
+  m_TagString: Obelisk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2214,7 +2214,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 150}
+  m_SizeDelta: {x: 1200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &686307201
 MonoBehaviour:
@@ -2249,7 +2249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- Press E to interact -'
+  m_Text: 
 --- !u!222 &686307202
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3285,7 +3285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1113752892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3304,7 +3304,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 31.78418, y: 405.5}
-  m_SizeDelta: {x: 4000, y: 2100}
+  m_SizeDelta: {x: 4500, y: 2100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113752893
 MonoBehaviour:
@@ -6237,6 +6237,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3088376698461110349, guid: 0efe633885fdd744d8669a5947021916, type: 3}
+      propertyPath: obelisk
+      value: 
+      objectReference: {fileID: 231860166}
+    - target: {fileID: 3088376698461110349, guid: 0efe633885fdd744d8669a5947021916, type: 3}
+      propertyPath: MessageText
+      value: 
+      objectReference: {fileID: 686307201}
     - target: {fileID: 3088376698461110349, guid: 0efe633885fdd744d8669a5947021916, type: 3}
       propertyPath: MessagePanel
       value: 
