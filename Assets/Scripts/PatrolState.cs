@@ -16,6 +16,8 @@ public class PatrolState : IState
 
     public void Enter()
     {
+        aiController.Agent.speed = 1f;
+        aiController.Animator.SetFloat("EnemySpeed", 1f);
         aiController.Animator.SetBool("isMoving", true);
         MoveToNextWaypoint();
 
@@ -50,10 +52,5 @@ public class PatrolState : IState
         if(Vector3.Distance(aiController.Agent.transform.position,  aiController.Waypoints[currentWaypointIndex].position) < 0.1f){
             currentWaypointIndex = (currentWaypointIndex + 1) % aiController.Waypoints.Length;
         }
-        Debug.Log("Moving...");
-        Debug.Log(aiController.Waypoints[currentWaypointIndex]);
-        
-        Debug.Log(aiController.Agent.transform.position + ".........." + aiController.Waypoints[currentWaypointIndex].position);
-        
     }
 }

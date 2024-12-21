@@ -11,8 +11,10 @@ public class ChaseState : IState
 
     public void Enter()
     {
-	//    aiController.Animator.SetBool("isChasing", true);
-        // No animations, so no need to set any animator parameters
+        aiController.Agent.speed = 3f;
+        aiController.Animator.SetFloat("EnemySpeed", 3f);
+        aiController.Animator.SetBool("isChasing", true);
+        Execute();
     }
 
     public void Execute()

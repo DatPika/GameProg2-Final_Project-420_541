@@ -15,7 +15,7 @@ public class AIController : MonoBehaviour
     void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
-        Animator = GetComponent<Animator>(); // Commented out since we're not using animations
+        Animator = GetComponent<Animator>();
 
         StateMachine = new StateMachine();
         StateMachine.AddState(new IdleState(this));
@@ -26,14 +26,6 @@ public class AIController : MonoBehaviour
         StateMachine.TransitionToState(StateType.Idle);
     }
 
-    // void Update()
-    // {
-    //     StateMachine.Update();
-    //     Animator.SetFloat("CharacterSpeed", Agent.velocity.magnitude);
-    //     currentState = StateMachine.GetCurrentStateType();
-    // }
-
-    // Example
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
