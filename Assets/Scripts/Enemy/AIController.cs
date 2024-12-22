@@ -15,9 +15,11 @@ public class AIController : MonoBehaviour
     public StateType currentState;
 
     private bool isPlayerInvisible;
+    private AudioSource audioChase;
 
     void Start()
     {
+        audioChase = GetComponent<AudioSource>();
         Agent = GetComponent<NavMeshAgent>();
         Animator = GetComponent<Animator>();
 
@@ -50,9 +52,12 @@ public class AIController : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
         if (distanceToPlayer <= SightRange && !isPlayerInvisible)
         {
-            // Optionally, add line of sight checks here using Raycast
+            if (!audioChase.isPlaying) {
+                audioChase.Play();
+            }
             return true;
         }
+        audioChase.Stop();
         return false;
     }
 

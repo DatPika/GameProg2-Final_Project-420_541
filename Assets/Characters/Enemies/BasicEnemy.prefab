@@ -104,6 +104,7 @@ MonoBehaviour:
   Waypoints:
   - {fileID: 0}
   Player: {fileID: 0}
+  PlayerPrefab: {fileID: 0}
   SightRange: 10
   AttackRange: 2
   PlayerLayer:
