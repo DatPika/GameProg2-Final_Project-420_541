@@ -18,8 +18,7 @@ public class PlayerMechanics : MonoBehaviour
     public bool canTurnInvisible = false;
     public bool canErase = false;
     public bool interaction = true;
-    
-    private bool isInvisible;
+    public bool isInvisible = false;
 
     Renderer surfaceRend;
     Renderer jointsRend;
@@ -100,12 +99,12 @@ public class PlayerMechanics : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        if(other.CompareTag("Obelisk")){
+        if(other.CompareTag("Obelisk") && interaction){
             OpenMessagePanel("- Press E to interact -", 0f);
         }
     }
     private void OnTriggerExit(Collider other){
-        if(other.CompareTag("Obelisk")){
+        if(other.CompareTag("Obelisk") && interaction){
             CloseMessagePanel(0f);
         }
     }
@@ -152,8 +151,10 @@ public class PlayerMechanics : MonoBehaviour
 
                     // Disabling obelisk collider to avoid further interaction
                     //      and MessagePanel opening and closing
-                    Debug.Log("Disabling Obelisk collider");
-                    obelisk.GetComponent<Collider>().enabled = false;
+                    // Debug.Log("Disabling Obelisk collider");
+                    // Collider col = obelisk.GetComponent<Collider>();
+                    // Print the name of the collider and its type
+                    
 
                     // User friendly UI
                     OpenMessagePanel("- Erase Obtained -", 0f);
