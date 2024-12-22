@@ -516,7 +516,7 @@ MonoBehaviour:
 
     LShift => Sprint
 
-    LCtrl => Slide/Evade'
+    LCtrl => Slide'
 --- !u!222 &667883060
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -676,9 +676,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'E => Interact
 
-    LMouse => Attack
-
-'
+    Q => Invisibility'
 --- !u!222 &841338543
 CanvasRenderer:
   m_ObjectHideFlags: 0

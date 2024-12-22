@@ -15,7 +15,18 @@ public class GoalScript : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene("Scene2");
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (sceneName == "Intro-Hike")
+        {
+            SceneManager.LoadScene("Scene2");
+        }
+        else
+        {
+            Cursor.visible = true;
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
 

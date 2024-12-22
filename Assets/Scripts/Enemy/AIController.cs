@@ -9,6 +9,7 @@ public class AIController : MonoBehaviour
     public Transform[] Waypoints;
     public Transform Player;
     public GameObject PlayerPrefab;
+    public GameObject GameManager;
     public float SightRange = 10f;
     public float AttackRange = 2f; // New attack range variable
     public LayerMask PlayerLayer;
@@ -16,6 +17,7 @@ public class AIController : MonoBehaviour
 
     private bool isPlayerInvisible;
     private AudioSource audioChase;
+    private bool isGamePaused;
 
     void Start()
     {
@@ -34,6 +36,7 @@ public class AIController : MonoBehaviour
 
     void Update()
     {
+        isGamePaused = GameManager.GetComponent<GameManager>().isPaused;
         isPlayerInvisible = PlayerPrefab.GetComponent<PlayerMechanics>().isInvisible;
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
         
@@ -52,7 +55,8 @@ public class AIController : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
         if (distanceToPlayer <= SightRange && !isPlayerInvisible)
         {
-            if (!audioChase.isPlaying) {
+            // So the audio doesn't play every frame and so it stops when pause
+            if (!audioChase.isPlaying && !isGamePaused) {
                 audioChase.Play();
             }
             return true;

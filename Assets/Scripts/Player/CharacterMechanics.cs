@@ -16,7 +16,7 @@ public class PlayerMechanics : MonoBehaviour
     public Text MessageText;
     public GameObject obelisk;
     public bool canTurnInvisible = false;
-    public bool canErase = false;
+    // public bool canErase = false; //* No time, but would be used for kill mechanic
     public bool interaction = true;
     public bool isInvisible = false;
 
@@ -117,7 +117,7 @@ public class PlayerMechanics : MonoBehaviour
         if(MessagePanel.activeSelf){
             // Debug.Log("Scene Active...");
             // Level 1
-            if(sceneName == "Intro-Hike"){
+            if(sceneName == "Intro-Hike" || sceneName == "Scene2"){
                 // Debug.Log("Entering Invisibility Interaction...");
                 // If E is pressed while the Message Panel is shown
                 //      Invisibility is unlocked, then interactions are blocked.
@@ -139,30 +139,30 @@ public class PlayerMechanics : MonoBehaviour
                 }
             }
 
-            // Level 2
-            if(sceneName == "Scene2"){
-                // Debug.Log("Entering Erase Interaction...");
-                // If E is pressed while the Message Panel is shown
-                //      Erase is unlocked, then interactions are blocked.
-                //      User erase bool in invis method.
-                if(Input.GetKeyDown(KeyCode.E)){
-                    canErase = true;
-                    interaction = false;
+            //* Level 2 ==> Originally we wanted to implement a kill mechanic, but ran out of time
+            // if(sceneName == "Scene2"){
+            //     // Debug.Log("Entering Erase Interaction...");
+            //     // If E is pressed while the Message Panel is shown
+            //     //      Erase is unlocked, then interactions are blocked.
+            //     //      User erase bool in invis method.
+            //     if(Input.GetKeyDown(KeyCode.E)){
+            //         canErase = true;
+            //         interaction = false;
 
-                    // Disabling obelisk collider to avoid further interaction
-                    //      and MessagePanel opening and closing
-                    // Debug.Log("Disabling Obelisk collider");
-                    // Collider col = obelisk.GetComponent<Collider>();
-                    // Print the name of the collider and its type
+            //         // Disabling obelisk collider to avoid further interaction
+            //         //      and MessagePanel opening and closing
+            //         // Debug.Log("Disabling Obelisk collider");
+            //         // Collider col = obelisk.GetComponent<Collider>();
+            //         // Print the name of the collider and its type
                     
 
-                    // User friendly UI
-                    OpenMessagePanel("- Erase Obtained -", 0f);
-                    CloseMessagePanel(3f);
-                    OpenMessagePanel("- Press X to execute Erase -", 3.5f);
-                    CloseMessagePanel(6.5f);
-                }
-            }
+            //         // User friendly UI
+            //         OpenMessagePanel("- Erase Obtained -", 0f);
+            //         CloseMessagePanel(3f);
+            //         OpenMessagePanel("- Press X to execute Erase -", 3.5f);
+            //         CloseMessagePanel(6.5f);
+            //     }
+            // }
         }
     }
 }

@@ -7,10 +7,10 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // Singleton
+    public bool isPaused;
     public GameObject PauseMenu;
     public UnityEvent GamePaused;
     public UnityEvent GameResumed;
-    private bool isPaused;
 
     void Awake()
     {
@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour
     // We want to have this function separate to call it when resume is clicked
     public void Resume()
     {
+        // To toggle the pause state
+        isPaused = !isPaused;
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
         Cursor.visible = false;
