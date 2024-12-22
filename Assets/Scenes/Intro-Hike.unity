@@ -759,7 +759,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160659543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23648958, y: -0.0148930205, z: 0.004817326, w: 0.97150797}
+  m_LocalRotation: {x: 0.23648961, y: -0.014892979, z: 0.004817317, w: 0.97150797}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2214,7 +2214,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1200, y: 150}
+  m_SizeDelta: {x: 1400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &686307201
 MonoBehaviour:
@@ -2274,7 +2274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -2935,7 +2935,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03594355, y: 0.23935542, z: -0.008867299, w: 0.970226}
+  m_LocalRotation: {x: 0.03594354, y: 0.23935539, z: -0.008867296, w: 0.970226}
   m_LocalPosition: {x: 0.0015287399, y: -0.023000002, z: 5.2118444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3304,7 +3304,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 31.78418, y: 405.5}
-  m_SizeDelta: {x: 4500, y: 2100}
+  m_SizeDelta: {x: 5200, y: 2100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113752893
 MonoBehaviour:
@@ -3443,7 +3443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182475036}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.035943545, y: 0.2393554, z: -0.008867297, w: 0.970226}
+  m_LocalRotation: {x: 0.03594354, y: 0.23935539, z: -0.0088672945, w: 0.970226}
   m_LocalPosition: {x: 0.0015292168, y: -0.023000002, z: 5.2118444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3702,7 +3702,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237082988}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 07fb674225e9a554da173d60cebfed77, type: 3}
@@ -6255,11 +6255,21 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1504915576643254366, guid: 0efe633885fdd744d8669a5947021916, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7863543702804444446}
+      addedObject: {fileID: 7863543702804444445}
     - targetCorrespondingSourceObject: {fileID: 1504915576643254366, guid: 0efe633885fdd744d8669a5947021916, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7863543702804444445}
+      addedObject: {fileID: 7863543702804444446}
   m_SourcePrefab: {fileID: 100100000, guid: 0efe633885fdd744d8669a5947021916, type: 3}
+--- !u!1 &1381315932498035865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8668658896659753018, guid: 0efe633885fdd744d8669a5947021916, type: 3}
+  m_PrefabInstance: {fileID: 1381315932498035864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1381315932498035866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7588000164394521522, guid: 0efe633885fdd744d8669a5947021916, type: 3}
+  m_PrefabInstance: {fileID: 1381315932498035864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2703337514353278087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6550,33 +6560,26 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &7863543702804444446
-Rigidbody:
+--- !u!114 &7863543702804444446
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539583175}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33de887e6e22d7a41ad2e5dc95df494f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSurface: {fileID: 1381315932498035866}
+  playerJoints: {fileID: 1381315932498035865}
+  MessagePanel: {fileID: 1113752891}
+  MessageText: {fileID: 686307201}
+  obelisk: {fileID: 231860166}
+  canTurnInvisible: 0
+  canErase: 0
+  interaction: 1
 --- !u!1001 &8292534312998031667
 PrefabInstance:
   m_ObjectHideFlags: 0
