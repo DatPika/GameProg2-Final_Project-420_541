@@ -115,10 +115,10 @@ public class PlayerMechanics : MonoBehaviour
         string sceneName = currentScene.name;
 
         if(MessagePanel.activeSelf){
-            Debug.Log("Scene Active...");
+            // Debug.Log("Scene Active...");
             // Level 1
             if(sceneName == "Intro-Hike"){
-                Debug.Log("Entering Invisibility Interaction...");
+                // Debug.Log("Entering Invisibility Interaction...");
                 // If E is pressed while the Message Panel is shown
                 //      Invisibility is unlocked, then interactions are blocked.
                 //      User invisibility bool in invis. method.
@@ -128,7 +128,7 @@ public class PlayerMechanics : MonoBehaviour
 
                     // Disabling obelisk collider to avoid further interaction
                     //      and MessagePanel opening and closing
-                    Debug.Log("Disabling Obelisk collider");
+                    // Debug.Log("Disabling Obelisk collider");
                     obelisk.GetComponent<Collider>().enabled = false;
 
                     // User friendly UI
@@ -141,7 +141,7 @@ public class PlayerMechanics : MonoBehaviour
 
             // Level 2
             if(sceneName == "Scene2"){
-                Debug.Log("Entering Erase Interaction...");
+                // Debug.Log("Entering Erase Interaction...");
                 // If E is pressed while the Message Panel is shown
                 //      Erase is unlocked, then interactions are blocked.
                 //      User erase bool in invis method.

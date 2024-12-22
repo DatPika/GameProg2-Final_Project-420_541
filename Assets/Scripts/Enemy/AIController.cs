@@ -8,10 +8,14 @@ public class AIController : MonoBehaviour
     public Animator Animator { get; private set; } // Not needed since we're not using animations
     public Transform[] Waypoints;
     public Transform Player;
+    public GameObject PlayerPrefab;
     public float SightRange = 10f;
     public float AttackRange = 2f; // New attack range variable
     public LayerMask PlayerLayer;
     public StateType currentState;
+
+    private bool isPlayerInvisible;
+
     void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
@@ -28,6 +32,7 @@ public class AIController : MonoBehaviour
 
     void Update()
     {
+        isPlayerInvisible = PlayerPrefab.GetComponent<PlayerMechanics>().isInvisible;
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
         
         if (IsPlayerInAttackRange())
@@ -43,7 +48,7 @@ public class AIController : MonoBehaviour
     public bool CanSeePlayer()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
-        if (distanceToPlayer <= SightRange)
+        if (distanceToPlayer <= SightRange && !isPlayerInvisible)
         {
             // Optionally, add line of sight checks here using Raycast
             return true;
