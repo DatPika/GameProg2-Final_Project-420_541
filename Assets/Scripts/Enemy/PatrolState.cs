@@ -49,7 +49,7 @@ public class PatrolState : IState
         }
         aiController.Agent.destination = aiController.Waypoints[currentWaypointIndex].position;
         
-        if(Vector3.Distance(aiController.Agent.transform.position,  aiController.Waypoints[currentWaypointIndex].position) < 0.1f){
+        if(Vector3.Distance(aiController.Agent.transform.position,  aiController.Waypoints[currentWaypointIndex].position) < 0.3f){
             currentWaypointIndex = (currentWaypointIndex + 1) % aiController.Waypoints.Length;
         }
     }
